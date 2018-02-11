@@ -8,6 +8,7 @@
 
 import UIKit
 
+//this is ui table view controller class, not default one
 class AddorRemove: UITableViewController {
 
     var userName = ["Marry", "Michael"]
