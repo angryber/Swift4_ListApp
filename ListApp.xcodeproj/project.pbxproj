@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5079F42030259300500FCA /* myTableVeiwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5079F32030259300500FCA /* myTableVeiwCell.swift */; };
 		3B898AAD202FE16F00DA338B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B898AAB202FE16F00DA338B /* Model.xcdatamodeld */; };
 		3B898AD1202FEE6E00DA338B /* ListApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B898ACF202FEE6E00DA338B /* ListApp.xcdatamodeld */; };
 		3BDDE19F2026DD4300DFE7DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDDE19E2026DD4300DFE7DD /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B5079F32030259300500FCA /* myTableVeiwCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTableVeiwCell.swift; sourceTree = "<group>"; };
 		3B898AAC202FE16F00DA338B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3B898AD0202FEE6E00DA338B /* ListApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListApp.xcdatamodel; sourceTree = "<group>"; };
 		3BDDE19B2026DD4300DFE7DD /* ListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +65,7 @@
 				3B898AAB202FE16F00DA338B /* Model.xcdatamodeld */,
 				3B898ACF202FEE6E00DA338B /* ListApp.xcdatamodeld */,
 				3BDDE1B02026E36F00DFE7DD /* AddorRemove.swift */,
+				3B5079F32030259300500FCA /* myTableVeiwCell.swift */,
 				3BDDE1A52026DD4300DFE7DD /* Assets.xcassets */,
 				3BDDE1A72026DD4300DFE7DD /* LaunchScreen.storyboard */,
 				3BDDE1AA2026DD4300DFE7DD /* Info.plist */,
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B5079F42030259300500FCA /* myTableVeiwCell.swift in Sources */,
 				3BDDE1B12026E36F00DFE7DD /* AddorRemove.swift in Sources */,
 				3B898AD1202FEE6E00DA338B /* ListApp.xcdatamodeld in Sources */,
 				3BDDE19F2026DD4300DFE7DD /* AppDelegate.swift in Sources */,

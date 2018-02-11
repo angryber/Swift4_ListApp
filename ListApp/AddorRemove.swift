@@ -23,8 +23,13 @@ class AddorRemove: UITableViewController{
         return userName.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) //indexPath
+        //indexPath reference to cell class(swift)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)  as! myTableVeiwCell
+        
         //cell.textLabel?.text = userName[indexPath.row]
+        let tapGesture = UITapGestureRecognizer(target: cell, action: #selector(cell.changeBackgroundColor))
+        cell.addGestureRecognizer(tapGesture)
+        
         let note = userName[indexPath.row]
         cell.textLabel?.text = note.value(forKey:"name") as? String
         // note.value(forKey:String), this is option value, so do type casting from option to string
