@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 //this is ui table view controller class, not default one
-class AddorRemove: UITableViewController {
+class AddorRemove: UITableViewController{
 
-    var userName = ["Marry", "Michael"]
+    //var userName = ["Marry", "Michael"]
+    var userName=[NSManagedObject]()
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -21,7 +24,10 @@ class AddorRemove: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) //indexPath
-        cell.textLabel?.text = userName[indexPath.row]
+        //cell.textLabel?.text = userName[indexPath.row]
+        let note = userName[indexPath.row]
+        cell.textLabel?.text = note.value(forKey:"name") as? String
+        // note.value(forKey:String), this is option value, so do type casting from option to string
         return cell
     }
 
@@ -35,7 +41,9 @@ class AddorRemove: UITableViewController {
             //self.dis2.text = textField!.text
             let addWork = self.checkAdd(textField!.text!)
             if addWork{
-                self.userName.append(textField!.text!)
+                //self.userName.append(textField!.text!)
+                //save functin on coreData
+                self.saveName(textField!.text!)
                 self.tableView.reloadData()
             }
         }
@@ -56,6 +64,47 @@ class AddorRemove: UITableViewController {
         present(alert,animated: true, completion: nil)
         
     }
+    
+    func saveName (_ name: String){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //throught viewContext
+        let managedContext = appDelegate.persistentContainer.viewContext
+        //assign Note Entity to parameter
+        let entity = NSEntityDescription.entity(forEntityName: "Note", in: managedContext)
+        //caret a type of NSManagedObject for note
+        let note = NSManagedObject(entity: entity!, insertInto: managedContext)
+        //save value to Note.name (Entity.Attribute)
+        note.setValue(name, forKey: "name")
+        //real save to coreData storage
+        //managedContext.save() this will throws error
+        do{
+            try managedContext.save()
+            userName.append(note)
+        }catch let error as NSError{
+            print("Could not save: \(error), \(error.userInfo)")
+            //or do nothing
+        }
+        
+    }
+    //grap stroge data when app view appears
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        //annnouce delegate and context
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        //fetch function, create request first for entity Name
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+        
+        do{
+            let results = try managedContext.fetch(fetchRequest) //this is array type
+            userName = results as! [NSManagedObject]
+        }catch let error as NSError{
+            print("Cannot Fetch: \(error), \(error.userInfo)")
+        }
+        
+    }
+    
     func checkAdd (_ addName: String) -> Bool{
         var xyz = true
         if (addName == ""){
@@ -75,9 +124,25 @@ class AddorRemove: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            //start Back End
+            //annnouce delegate and context
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let managedContext = appDelegate.persistentContainer.viewContext
+            
+            //only compare the core data and show data
+            managedContext.delete(userName[indexPath.row])
+            
+            do{
+                try managedContext.save()
+            }catch let error as NSError{
+                print("Could not Delete: \(error), \(error.userInfo)")
+                //or do nothing
+            }
+            //handle with Front End
             userName.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+   
 
 }

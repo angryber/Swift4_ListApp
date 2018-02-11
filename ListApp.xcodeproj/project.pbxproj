@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B898AAD202FE16F00DA338B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B898AAB202FE16F00DA338B /* Model.xcdatamodeld */; };
+		3B898AD1202FEE6E00DA338B /* ListApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B898ACF202FEE6E00DA338B /* ListApp.xcdatamodeld */; };
 		3BDDE19F2026DD4300DFE7DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDDE19E2026DD4300DFE7DD /* AppDelegate.swift */; };
 		3BDDE1A42026DD4300DFE7DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDDE1A22026DD4300DFE7DD /* Main.storyboard */; };
 		3BDDE1A62026DD4300DFE7DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BDDE1A52026DD4300DFE7DD /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B898AAC202FE16F00DA338B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3B898AD0202FEE6E00DA338B /* ListApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListApp.xcdatamodel; sourceTree = "<group>"; };
 		3BDDE19B2026DD4300DFE7DD /* ListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDDE19E2026DD4300DFE7DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BDDE1A32026DD4300DFE7DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			children = (
 				3BDDE19E2026DD4300DFE7DD /* AppDelegate.swift */,
 				3BDDE1A22026DD4300DFE7DD /* Main.storyboard */,
+				3B898AAB202FE16F00DA338B /* Model.xcdatamodeld */,
+				3B898ACF202FEE6E00DA338B /* ListApp.xcdatamodeld */,
 				3BDDE1B02026E36F00DFE7DD /* AddorRemove.swift */,
 				3BDDE1A52026DD4300DFE7DD /* Assets.xcassets */,
 				3BDDE1A72026DD4300DFE7DD /* LaunchScreen.storyboard */,
@@ -137,7 +143,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BDDE1B12026E36F00DFE7DD /* AddorRemove.swift in Sources */,
+				3B898AD1202FEE6E00DA338B /* ListApp.xcdatamodeld in Sources */,
 				3BDDE19F2026DD4300DFE7DD /* AppDelegate.swift in Sources */,
+				3B898AAD202FE16F00DA338B /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +330,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3B898AAB202FE16F00DA338B /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3B898AAC202FE16F00DA338B /* Model.xcdatamodel */,
+			);
+			currentVersion = 3B898AAC202FE16F00DA338B /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		3B898ACF202FEE6E00DA338B /* ListApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3B898AD0202FEE6E00DA338B /* ListApp.xcdatamodel */,
+			);
+			currentVersion = 3B898AD0202FEE6E00DA338B /* ListApp.xcdatamodel */;
+			path = ListApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3BDDE1932026DD4300DFE7DD /* Project object */;
 }
